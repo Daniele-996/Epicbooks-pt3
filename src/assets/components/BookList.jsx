@@ -15,6 +15,7 @@ const BookList = function (props) {
               cardImg={book.img}
               cardTitle={book.title}
               cardPrice={book.price}
+              cardId={book.asin}
             />
           </Col>
         ))}
@@ -24,18 +25,3 @@ const BookList = function (props) {
 };
 
 export default BookList;
-
-// <Container>
-//   <Row>
-//     <Col xs={12} sm={12} >
-//       {props.books.map((book) => (
-//         <SingleBook
-//           key={book.asin}
-//           book={book}
-//           cardImg={book.img}
-//           cardTitle={book.title}
-//         />
-//       ))}
-//     </Col>
-//   </Row>
-// </Container>

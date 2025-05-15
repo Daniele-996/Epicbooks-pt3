@@ -23,7 +23,7 @@ class SingleBook extends Component {
           </Card.Title>
           <Card.Text>{}</Card.Text>
           <Button variant="primary">{this.props.cardPrice}</Button>
-          {this.state.selected && <CommentArea />}
+          {this.state.selected && <CommentArea id={this.props.cardId} />}
         </Card.Body>
       </Card>
     );

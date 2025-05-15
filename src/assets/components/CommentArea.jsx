@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-import CommentList from "./CommentList";
+import CommentsList from "./CommentsList";
 import AddComment from "./AddComment";
 import { Component } from "react";
 
@@ -11,7 +11,7 @@ class CommentArea extends Component {
   fetchComment = async () => {
     try {
       const response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/comments/",
+        "https://striveschool-api.herokuapp.com/api/comments/" + this.props.id,
         {
           headers: {
             Authorization:
@@ -21,6 +21,13 @@ class CommentArea extends Component {
       );
       if (response.ok) {
         const comments = await response.json();
+        this.setState({ comments }, () => {
+          // console.log(comments);
+          // this.state.comments.map((comment) => {
+          //   /*console.log(comment)*/
+          // });
+          // console.log(this.state);
+        });
       } else {
         throw new Error("Errore nella fetch");
       }
@@ -38,8 +45,8 @@ class CommentArea extends Component {
         <Container>
           <Row>
             <Col>
-              <CommentList />
-              <AddComment />
+              <CommentsList comment={this.state.comments} />
+              <AddComment id={this.props.id} />
             </Col>
           </Row>
         </Container>

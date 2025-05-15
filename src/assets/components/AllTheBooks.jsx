@@ -46,7 +46,7 @@ class AllTheBooks extends Component {
             Scifi
           </Button>
         </div>
-        <Row xs={1} sm={2} md={3} xl={4} xxl={6}>
+        {/* <Row xs={1} sm={2} md={3} xl={4} xxl={6}>
           {this.state.type.map((book) => (
             <Col key={book.asin}>
               <Card className="my-2">
@@ -61,7 +61,7 @@ class AllTheBooks extends Component {
               </Card>
             </Col>
           ))}
-        </Row>
+        </Row> */}
       </Container>
     );
   }
